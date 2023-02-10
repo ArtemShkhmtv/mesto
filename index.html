@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Mesto-Russia</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        src="./images/Mesto-logo.svg"
+        alt="Место Россия логотип"
+        class="logo"
+      />
+    </header>
+    <section class="profile">
+      <img
+        src="./images/Profile-photo.jpg"
+        alt="Ж.И. Кусто в красной шапке"
+        class="profile__photo"
+      />
+      <div class="title-wrapper">
+        <div class="edit-wrapper">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <a href="" class="profile__edit-botton">
+            <img
+              src="./images/pen-logo.svg"
+              alt="редактировать профиль"
+              class="pen-logo"
+            />
+          </a>
+        </div>
+        <p class="profile__description">Исследователь океана</p>
+      </div>
+      <a href="" class="profile__add-card-botton">
+        <img
+          src="./images/plus-logo.svg"
+          alt="добавить карточку"
+          class="plus-logo"
+        />
+      </a>
+    </section>
+    <section class="cards-grid">
+      <div class="card">
+        <img
+          src="./images/Karachaevsk.jpg"
+          alt="Старая церковь на фоне зеленых гор"
+          class="card__image"
+        />
+        <div class="card-wrapper">
+          <h2 class="card__title">Карачаевск</h2>
+          <a href="" class="card__like">
+            <img src="./images/like.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="./images/Elbrus.jpg"
+          alt="Старая церковь на фоне зеленых гор"
+          class="card__image"
+        />
+        <div class="card-wrapper">
+          <h2 class="card__title">Гора Эльбрус</h2>
+          <a href="" class="card__like">
+            <img src="./images/like.svg" alt="пейзаж Эльбруса" />
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="./images/Dombai.jpg"
+          alt="Старая церковь на фоне зеленых гор"
+          class="card__image"
+        />
+        <div class="card-wrapper">
+          <h2 class="card__title">Домбай</h2>
+          <a href="" class="card__like">
+            <img src="./images/like.svg" alt="пейзаж Домбая" />
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="./images/Karachaevsk.jpg"
+          alt="Старая церковь на фоне зеленых гор"
+          class="card__image"
+        />
+        <div class="card-wrapper">
+          <h2 class="card__title">Карачаевск</h2>
+          <a href="" class="card__like">
+            <img src="./images/like.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="./images/Elbrus.jpg"
+          alt="Старая церковь на фоне зеленых гор"
+          class="card__image"
+        />
+        <div class="card-wrapper">
+          <h2 class="card__title">Гора Эльбрус</h2>
+          <a href="" class="card__like">
+            <img src="./images/like.svg" alt="пейзаж Эльбруса" />
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="./images/Dombai.jpg"
+          alt="Старая церковь на фоне зеленых гор"
+          class="card__image"
+        />
+        <div class="card-wrapper">
+          <h2 class="card__title">Домбай</h2>
+          <a href="" class="card__like">
+            <img src="./images/like.svg" alt="пейзаж Домбая" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">&copy;&NonBreakingSpace;2020 Mesto Russia</footer>
+    <div class="popup">
+      <div class="popup__overlay">
+        <a href="" class="popup__close">
+          <img src="./images/close-icon.svg" alt="закрыть" class="popup__close-icon"/>
+        </a>
+        <form class="popup__container">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" class="popup__text popup__text_type_name" />
+          <input type="text" class="popup__text popup__text_type_description" />
+          <button class="popup__save-botton">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
