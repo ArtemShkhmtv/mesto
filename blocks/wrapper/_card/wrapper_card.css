@@ -1,0 +1,6 @@
+.wrapper_card {
+  display: flex;
+  padding: 21px 21px 27px 21px;
+  align-items: baseline;
+  justify-content: space-between;
+}
