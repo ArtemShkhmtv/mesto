@@ -1,16 +1,11 @@
 .popup__overlay {
-  max-width: 430px;
-  max-height: 330px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 @media screen and (max-width: 767px) {
   .popup__overlay {
-    padding: 0 19px;
+    gap: 16px;
   }
 }

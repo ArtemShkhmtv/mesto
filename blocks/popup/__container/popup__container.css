@@ -6,6 +6,8 @@
   border-radius: 10px;
   position: relative;
   z-index: 1;
+  max-width: 430px;
+  max-height: 330px;
 }
 
 @media screen and (max-width: 767px) {
