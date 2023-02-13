@@ -11,12 +11,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .logo {
-    max-width: 120px;
-  }
-
   .profile {
     flex-direction: column;
-    margin: 38px auto 36px auto;
+    margin: 42px auto 36px auto;
   }
 }

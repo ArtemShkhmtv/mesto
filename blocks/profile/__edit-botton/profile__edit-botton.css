@@ -1,14 +1,11 @@
 .profile__edit-botton {
-  display: flex;
+  display: block;
+  padding: 0;
   min-width: 24px;
   min-height: 24px;
   border: 1px solid #ffffff;
   box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: calc(100% + 18px);
-  top: 16px;
+  background: url(../../../images/pen-logo.svg) no-repeat center;
 }
 
 .profile__edit-botton:hover {
@@ -18,9 +15,8 @@
 
 @media screen and (max-width: 425px) {
   .profile__edit-botton {
-    left: calc(100% + 10px);
-    top: 8px;
     min-width: 18px;
     min-height: 18px;
+    background-size: 7.5px;
   }
 }

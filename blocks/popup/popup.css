@@ -1,6 +1,7 @@
 .popup {
   display: none;
-  position: absolute;
+  position: fixed;
+  padding: 0 19px;
   left: 0;
   top: 0;
   bottom: 0;
@@ -9,10 +10,4 @@
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;
-}
-
-@media screen and (max-width: 767px) {
-  .popup {
-    padding: 0 19px;
-  }
 }

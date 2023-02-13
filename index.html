@@ -15,120 +15,143 @@
         class="logo"
       />
     </header>
-    <section class="profile">
+    <main class="profile">
       <img
         src="./images/Profile-photo.jpg"
-        alt="Ж.И. Кусто в красной шапке"
+        alt="Фото профиля"
         class="profile__photo"
       />
-      <div class="wrapper">
-        <div class="wrapper wrapper_edit">
+      <div>
+        <div class="profile__wrapper">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <a href="" class="profile__edit-botton">
-            <img
-              src="./images/pen-logo.svg"
-              alt="редактировать профиль"
-              class="pen-logo"
-            />
-          </a>
+          <button
+            href=""
+            class="profile__edit-botton"
+            type="button"
+            aria-label="редактировать профиль"
+          ></button>
         </div>
         <p class="profile__description">Исследователь океана</p>
       </div>
-      <a href="" class="profile__add-card-botton">
-        <img
-          src="./images/plus-logo.svg"
-          alt="добавить карточку"
-          class="plus-logo"
-        />
-      </a>
-    </section>
+      <button
+        type="button"
+        href=""
+        class="profile__add-card-botton"
+        aria-label="добавить карточку"
+      ></button>
+    </main>
     <section class="cards-grid">
-      <div class="card">
+      <article class="card">
         <img
           src="./images/Karachaevsk.jpg"
           alt="Старая церковь на фоне зеленых гор"
           class="card__image"
         />
-        <div class="wrapper wrapper_card">
+        <div class="card__wrapper">
           <h2 class="card__title">Карачаевск</h2>
-          <a href="" class="card__like">
-            <img src="./images/like.svg" alt="сердечко" />
-          </a>
+          <button
+            type="button"
+            href=""
+            class="card__like"
+            aria-label="сердечко"
+          ></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img
           src="./images/Elbrus.jpg"
           alt="Эльбрус на восходе"
           class="card__image"
         />
-        <div class="wrapper wrapper_card">
+        <div class="card__wrapper">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <a href="" class="card__like">
-            <img src="./images/like.svg" alt="сердечко" />
-          </a>
+          <button
+            type="button"
+            href=""
+            class="card__like"
+            aria-label="сердечко"
+          ></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img src="./images/Dombai.jpg" alt="Скалы Домбая" class="card__image" />
-        <div class="wrapper wrapper_card">
+        <div class="card__wrapper">
           <h2 class="card__title">Домбай</h2>
-          <a href="" class="card__like">
-            <img src="./images/like.svg" alt="сердечко" />
-          </a>
+          <button
+            type="button"
+            href=""
+            class="card__like"
+            aria-label="сердечко"
+          ></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img
           src="./images/Elbrus.jpg"
           alt="Эльбрус на восходе"
           class="card__image"
         />
-        <div class="wrapper wrapper_card">
+        <div class="card__wrapper">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <a href="" class="card__like">
-            <img src="./images/like.svg" alt="сердечко" />
-          </a>
+          <button
+            type="button"
+            href=""
+            class="card__like"
+            aria-label="сердечко"
+          ></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img src="./images/Dombai.jpg" alt="Скалы Домбая" class="card__image" />
-        <div class="wrapper wrapper_card">
+        <div class="card__wrapper">
           <h2 class="card__title">Домбай</h2>
-          <a href="" class="card__like">
-            <img src="./images/like.svg" alt="сердечко" />
-          </a>
+          <button
+            type="button"
+            href=""
+            class="card__like"
+            aria-label="сердечко"
+          ></button>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img
           src="./images/Karachaevsk.jpg"
           alt="Старая церковь на фоне зеленых гор"
           class="card__image"
         />
-        <div class="wrapper wrapper_card">
+        <div class="card__wrapper">
           <h2 class="card__title">Карачаево-Черкесия</h2>
-          <a href="" class="card__like">
-            <img src="./images/like.svg" alt="сердечко" />
-          </a>
+          <button
+            type="button"
+            href=""
+            class="card__like"
+            aria-label="сердечко"
+          ></button>
         </div>
-      </div>
+      </article>
     </section>
     <footer class="footer">&copy;&NonBreakingSpace;2020 Mesto Russia</footer>
     <div class="popup">
       <div class="popup__overlay">
-        <a href="" class="popup__close">
-          <img
-            src="./images/close-icon.svg"
-            alt="закрыть"
-            class="popup__close-icon"
-          />
-        </a>
-        <form class="popup__container">
+        <button
+          type="button"
+          href=""
+          class="popup__close"
+          aria-label="закрыть"
+        ></button>
+        <form class="popup__container" name="popup__container">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" class="popup__text popup__text_type_name" />
-          <input type="text" class="popup__text popup__text_type_description" />
-          <button class="popup__save-botton">Сохранить</button>
+          <input
+            type="text"
+            class="popup__text popup__text_type_name"
+            name="popup__text_type_name"
+          />
+          <input
+            type="text"
+            class="popup__text popup__text_type_description"
+            name="popup__text_type_description"
+          />
+          <button class="popup__save-botton" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
