@@ -8,6 +8,7 @@
   border-radius: 2px;
   box-sizing: border-box;
   background: url(../../../images/plus-logo.svg) no-repeat center;
+  cursor: pointer;
 }
 
 .profile__add-card-botton:hover {

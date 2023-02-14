@@ -4,6 +4,7 @@
   min-height: 19px;
   padding: 0;
   border: none;
+  cursor: pointer;
 }
 
 .card__like:hover {

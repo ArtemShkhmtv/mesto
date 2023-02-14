@@ -8,6 +8,7 @@
   position: relative;
   left: 40px;
   background: url(../../../images/close-icon.svg) no-repeat center / cover;
+  cursor: pointer;
 }
 
 .popup__close:hover {

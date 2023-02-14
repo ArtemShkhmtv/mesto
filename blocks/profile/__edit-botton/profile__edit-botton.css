@@ -6,6 +6,7 @@
   border: 1px solid #ffffff;
   box-sizing: border-box;
   background: url(../../../images/pen-logo.svg) no-repeat center;
+  cursor: pointer;
 }
 
 .profile__edit-botton:hover {

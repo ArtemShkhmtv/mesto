@@ -9,26 +9,23 @@ let descriptionInput =document.querySelector('.popup__text_type_description');
 
 // Открытие попапа редактирования профиля
 
-function popupOpen (evt) {
-  evt.preventDefault();
+function popupOpen () {
   popup.classList.add('popup_opened');
+  nameInput.value = profileName.textContent;
+  descriptionInput.value = profileDescription.textContent;
 }
 
 buttonEdit.addEventListener('click', popupOpen);
 
 // закрытие попапа редактирования профиля
 
-function popupClose (evt) {
-  evt.preventDefault();
+function popupClose () {
   popup.classList.remove('popup_opened');
 }
 
 buttonClose.addEventListener('click', popupClose);
 
 // инпут профиля по умолчанию и отправка формы
-
-nameInput.value = profileName.textContent;
-descriptionInput.value = profileDescription.textContent;
 
 function handleFormSubmit (evt) {
   evt.preventDefault(); 
