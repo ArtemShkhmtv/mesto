@@ -38,114 +38,103 @@
         aria-label="добавить карточку"
       ></button>
     </main>
-    <section class="cards-grid">
-      <article class="card">
-        <img
-          src="./images/Karachaevsk.jpg"
-          alt="Старая церковь на фоне зеленых гор"
-          class="card__image"
-        />
-        <div class="card__wrapper">
-          <h2 class="card__title">Карачаевск</h2>
-          <button
-            type="button"
-            class="card__like"
-            aria-label="сердечко"
-          ></button>
-        </div>
-      </article>
-      <article class="card">
-        <img
-          src="./images/Elbrus.jpg"
-          alt="Эльбрус на восходе"
-          class="card__image"
-        />
-        <div class="card__wrapper">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button
-            type="button"
-            class="card__like"
-            aria-label="сердечко"
-          ></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./images/Dombai.jpg" alt="Скалы Домбая" class="card__image" />
-        <div class="card__wrapper">
-          <h2 class="card__title">Домбай</h2>
-          <button
-            type="button"
-            class="card__like"
-            aria-label="сердечко"
-          ></button>
-        </div>
-      </article>
-      <article class="card">
-        <img
-          src="./images/Elbrus.jpg"
-          alt="Эльбрус на восходе"
-          class="card__image"
-        />
-        <div class="card__wrapper">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button
-            type="button"
-            class="card__like"
-            aria-label="сердечко"
-          ></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./images/Dombai.jpg" alt="Скалы Домбая" class="card__image" />
-        <div class="card__wrapper">
-          <h2 class="card__title">Домбай</h2>
-          <button
-            type="button"
-            class="card__like"
-            aria-label="сердечко"
-          ></button>
-        </div>
-      </article>
-      <article class="card">
-        <img
-          src="./images/Karachaevsk.jpg"
-          alt="Старая церковь на фоне зеленых гор"
-          class="card__image"
-        />
-        <div class="card__wrapper">
-          <h2 class="card__title">Карачаево-Черкесия</h2>
-          <button
-            type="button"
-            class="card__like"
-            aria-label="сердечко"
-          ></button>
-        </div>
-      </article>
-    </section>
+    <section class="cards-grid"></section>
     <footer class="footer">&copy;&NonBreakingSpace;2020 Mesto Russia</footer>
-    <div class="popup">
-      <div class="popup__overlay">
+    <div class="popup popup-edit">
+      <div class="popup__wrapper popup-edit__wrapper">
         <button
           type="button"
-          class="popup__close"
+          class="popup__close popup-edit__close"
           aria-label="закрыть"
         ></button>
-        <form class="popup__container" name="popup__container">
-          <h2 class="popup__title">Редактировать профиль</h2>
+        <form
+          class="popup__container popup-edit__container"
+          name="popup-edit__container"
+        >
+          <h2 class="popup__title popup-edit__title">Редактировать профиль</h2>
           <input
             type="text"
-            class="popup__text popup__text_type_name"
-            name="popup__text_type_name"
+            class="popup__text popup-edit__text popup-edit__text_type_name"
+            name="popup-edit__text_type_name"
           />
           <input
             type="text"
-            class="popup__text popup__text_type_description"
-            name="popup__text_type_description"
+            class="popup__text popup-edit__text popup-edit__text_type_description"
+            name="popup-edit__text_type_description"
           />
-          <button class="popup__save-botton" type="submit">Сохранить</button>
+          <button
+            class="popup__save-botton popup-edit__save-botton"
+            type="submit"
+          >
+            Сохранить
+          </button>
         </form>
       </div>
     </div>
+    <div class="popup popup-add-card">
+      <div class="popup__wrapper popup-add-card__wrapper">
+        <button
+          type="button"
+          class="popup__close popup-add-card__close"
+          aria-label="закрыть"
+        ></button>
+        <form
+          class="popup__container popup-add-card__container"
+          name="popup-add-card__container"
+        >
+          <h2 class="popup__title popup-add-card__title">Новое место</h2>
+          <input
+            type="text"
+            class="popup__text popup-add-card__text popup-add-card__text_type_name"
+            name="popup-add-card__text_type_name"
+            placeholder="Название"
+          />
+          <input
+            type="text"
+            class="popup__text popup-add-card__text popup-add-card__text_type_description"
+            name="popup-add-card__text_type_description"
+            placeholder="Ссылка на картинку"
+          />
+          <button
+            class="popup__save-botton popup-add-card__save-botton"
+            type="submit"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup-picture">
+      <div class="popup__wrapper popup-picture__wrapper">
+        <button
+          type="button"
+          class="popup__close popup-picture__close"
+          aria-label="закрыть"
+        ></button>
+        <img
+          src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
+          alt="очень красиво"
+          class="popup-picture__image"
+        />
+        <h2 class="popup-picture__title">Домбай</h2>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <article class="card">
+        <img src="" alt="карточка" class="card__image" />
+        <div class="card__wrapper">
+          <h2 class="card__title"></h2>
+          <button
+            type="button"
+            class="card__like"
+            aria-label="сердечко"
+          ></button>
+        </div>
+        <botton class="card__delete" type="button" aria-label="урна"></botton>
+      </article>
+    </template>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>
