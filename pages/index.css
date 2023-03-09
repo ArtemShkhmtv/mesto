@@ -30,4 +30,16 @@
 @import url(../blocks/popup-picture/popup-picture.css);
 @import url(../blocks/popup-picture/__image/popup-picture__image.css);
 @import url(../blocks/popup-picture/__title/popup-picture__title.css);
+@import url(../blocks/popup/__error-message/_hidden/popup__error-message_hidden.css);
+@import url(../blocks/popup/__error-message/popup__error-message.css);
+@import url(../blocks/popup/__text/_error/popup__text_error.css);
+@import url(../blocks/popup/__save-botton/_disabled/popup__save-botton_disabled.css);
+
+
+
+
+
+
+
+
 

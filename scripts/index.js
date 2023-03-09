@@ -14,9 +14,12 @@ function openPopup(popup) {
 }
 
 buttonEdit.addEventListener("click", () => {
-  openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+  openPopup(popupEdit);
+  enableValidation(enableValidationConfig);
+  checkInputValidity(formEditElement, nameInput);
+  checkInputValidity(formEditElement, descriptionInput);
 });
 
 // закрытие попапа редактирования профиля
@@ -25,7 +28,30 @@ function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
 
-buttonCloseEdit.addEventListener("click", () => closePopup(popupEdit));
+buttonCloseEdit.addEventListener("click", () => {
+  closePopup(popupEdit);
+});
+
+// закрытие попап щелчком по оверлэй
+
+document.addEventListener('mousedown', function (evt) {
+  const overlay = evt.target.classList.contains('popup_opened');
+  const wrapper = evt.target.classList.contains('popup__wrapper');
+  if (wrapper) {
+    closePopup(evt.target.parentElement);
+  } else if (overlay) {
+    closePopup(evt.target);
+  } 
+});
+
+// закрытие попапов нажатием Esc
+
+document.addEventListener('keydown', (evt) => {
+  const popups = document.querySelectorAll('.popup')
+  if (evt.key === 'Escape')  {
+    popups.forEach((element) => {closePopup(element);})
+ }
+});
 
 // инпут профиля по умолчанию и отправка формы
 
@@ -53,6 +79,9 @@ buttonAddCard.addEventListener("click", () => {
   openPopup(popupAddCard);
   nameAddCardInput.value = "";
   descriptionAddCardInput.value = "";
+  enableValidation(enableValidationConfig);
+  checkInputValidity(formAddCardElement, nameAddCardInput);
+  checkInputValidity(formAddCardElement, descriptionAddCardInput);
 });
 
 // закрытие попапа добавления карточки
