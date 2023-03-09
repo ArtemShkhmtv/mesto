@@ -7,7 +7,6 @@ const showInputError = (formSelector, inputSelector, errorMessage) => {
   errorElement.classList.add(enableValidationConfig.errorClass);
 };
 
-
 // когда страница валидна
 const hideInputError = (formSelector, inputSelector) => {
   const errorElement = formSelector.querySelector(`.${inputSelector.name}-error`);

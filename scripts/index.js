@@ -20,6 +20,15 @@ buttonEdit.addEventListener("click", () => {
   enableValidation(enableValidationConfig);
   checkInputValidity(formEditElement, nameInput);
   checkInputValidity(formEditElement, descriptionInput);
+
+  // закрытие попап нажатием Esc
+
+  document.addEventListener('keydown', function closeWindow(evt) {
+    if (evt.key === 'Escape')  {
+        closePopup(popupEdit);
+        document.removeEventListener('keydown', closeWindow);
+    }
+  });
 });
 
 // закрытие попапа редактирования профиля
@@ -30,6 +39,7 @@ function closePopup(popup) {
 
 buttonCloseEdit.addEventListener("click", () => {
   closePopup(popupEdit);
+  
 });
 
 // закрытие попап щелчком по оверлэй
@@ -44,14 +54,7 @@ document.addEventListener('mousedown', function (evt) {
   } 
 });
 
-// закрытие попапов нажатием Esc
 
-document.addEventListener('keydown', (evt) => {
-  const popups = document.querySelectorAll('.popup')
-  if (evt.key === 'Escape')  {
-    popups.forEach((element) => {closePopup(element);})
- }
-});
 
 // инпут профиля по умолчанию и отправка формы
 
@@ -82,6 +85,13 @@ buttonAddCard.addEventListener("click", () => {
   enableValidation(enableValidationConfig);
   checkInputValidity(formAddCardElement, nameAddCardInput);
   checkInputValidity(formAddCardElement, descriptionAddCardInput);
+// закрытие попап нажатием Esc 
+  document.addEventListener('keydown', function closeWindow(evt) {
+    if (evt.key === 'Escape')  {
+        closePopup(popupAddCard);
+        document.removeEventListener('keydown', closeWindow);
+    }
+  });
 });
 
 // закрытие попапа добавления карточки
@@ -132,6 +142,13 @@ function addCard(cardName, cardUrl) {
     popupPictureTitle.textContent = cardTitle.textContent;
     popupPictureImage.src = cardImage.src;
     popupPictureImage.alt = cardTitle.textContent;
+    // закрытие попап нажатием Esc 
+    document.addEventListener('keydown', function closeWindow(evt) {
+      if (evt.key === 'Escape')  {
+          closePopup(popupPicture);
+          document.removeEventListener('keydown', closeWindow);
+      }
+    });
   });
 
   return cardElement;
