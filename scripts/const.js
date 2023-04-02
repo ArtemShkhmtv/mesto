@@ -6,3 +6,5 @@ const enableValidationConfig = {
   inputErrorClass: 'popup__text_error',
   errorClass: 'popup__error-message_type_active'
 };
+
+export {enableValidationConfig};
