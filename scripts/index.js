@@ -28,11 +28,9 @@ function closeByEsc(evt) {
 buttonEdit.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
-  openPopup(popupEdit);
-
   // проверка валидации для сброса сообщения об ошибке в случае закрытия попап без сохранения
-  profileValidation.checkInputValidity(nameInput);
-  profileValidation.checkInputValidity(descriptionInput);
+  profileValidation.resetValidation();
+  openPopup(popupEdit);
 });
 
 // закрытие попапа редактирования профиля
@@ -79,11 +77,8 @@ buttonAddCard.addEventListener("click", () => {
   formAddCardElement.reset();
 
   //проверка валидации для сброса сообщения об ошибке в случае закрытия попап без сохранения и блокировка кнопки
-  cardAddValidation.checkInputValidity(nameAddCardInput);
-  cardAddValidation.checkInputValidity(descriptionAddCardInput);
-  cardAddValidation.disableButton();
+  cardAddValidation.resetValidation();
 });
-
 
 // Закрытие попап фото
 const popupPicture = document.querySelector(".popup-picture");
@@ -100,29 +95,30 @@ const handleMagnificationCard = (name, link) => {
   popupPictureImage.alt = name;
 }
 
-// добавление карточки через форму
-const cardAddForm = {};
-cardAddForm.nameCardInput = document.querySelector(".popup-add-card__text_type_name");
-cardAddForm.linkCardInput = document.querySelector(".popup-add-card__text_type_description");
+//создание карточки
+function createCard(item) {
+  const card = new Card(item, "#card-template", handleMagnificationCard);
+  const cardElement = card.generateCard();
+  return cardElement;
+}
 
+// добавление карточки через форму
 function addCardFormSubmit(evt) {
   evt.preventDefault();
-  const card = new Card(cardAddForm, "#card-template", handleMagnificationCard);
-  const cardElement = card.generateCard();
-  cardsGrid.prepend(cardElement);
+  const cardAddForm = {};
+  cardAddForm.name = nameAddCardInput.value;
+  cardAddForm.link = descriptionAddCardInput.value;
+  cardsGrid.prepend(createCard(cardAddForm));
   closePopup(popupAddCard);
 }
 
 formAddCardElement.addEventListener("submit", addCardFormSubmit);
 
-
 // добавление стартовых карточек
 const cardsGrid = document.querySelector(".cards-grid");  
 
 initialCards.forEach((item) => {
-    const card = new Card(item, "#card-template", handleMagnificationCard);
-    const cardElement = card.generateCard();
-    cardsGrid.prepend(cardElement);
+    cardsGrid.prepend(createCard(item));
 })
 
 // создание экземпляра валидатора для редактирования профиля

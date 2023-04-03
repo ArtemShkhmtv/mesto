@@ -27,8 +27,18 @@ class FormValidator {
     errorElement.textContent = '';
   };
 
+  // сброс остаточной валидации
+  resetValidation() {
+    this._toggleButtonState(); 
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement) 
+    });
+
+  }
+
   // проверка валидности каждого поля
-  checkInputValidity (inputElement) {
+  _checkInputValidity (inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);
     } else {
@@ -44,7 +54,7 @@ class FormValidator {
   };
 
   // блокировка кнопки
-  disableButton () {
+  _disableButton () {
     this._submitButton.classList.add(this._inactiveButtonClass);
     this._submitButton.setAttribute('disabled','');
   }
@@ -57,13 +67,11 @@ class FormValidator {
   // переключение кнопки
   _toggleButtonState (inputList) {
       if (this._hasInvalidInput(inputList)) {
-        this.disableButton();
+        this._disableButton();
       } else {
         this._enableButton();
       }
     };
-
-
 
   // функция добавления слушателей
   _setEventListeners () {
@@ -73,7 +81,7 @@ class FormValidator {
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this.checkInputValidity(inputElement);
+        this._checkInputValidity(inputElement);
         this._toggleButtonState(this._inputList);
       });
     });

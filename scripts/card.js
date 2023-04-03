@@ -18,7 +18,7 @@ class Card {
 }
 
   _likeCard() {
-    this._element.querySelector(".card__like").classList.toggle("card__like_favorite");
+    this._likeButton.classList.toggle("card__like_favorite");
   }
 
   _deleteCard() {
@@ -26,7 +26,7 @@ class Card {
   }
 
   _setEventListeners() {
-    this._element.querySelector(".card__like").addEventListener('click', () => {
+    this._likeButton.addEventListener('click', () => {
       this._likeCard(); 
     })
 
@@ -34,17 +34,19 @@ class Card {
       this._deleteCard();
     })
 
-    this._element.querySelector(".card__image").addEventListener('click', () => {
+    this._cardImage.addEventListener('click', () => {
       this._onPhotoClick(this._name, this._link);
     })
   }
 
   generateCard() {
     this._element = this._getTemplate();
+    this._likeButton = this._element.querySelector(".card__like");
+    this._cardImage = this._element.querySelector(".card__image");
     this._setEventListeners();
     this._element.querySelector(".card__title").textContent = this._name;
-    this._element.querySelector(".card__image").alt = this._name;
-    this._element.querySelector(".card__image").src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardImage.src = this._link;
     return this._element;
   }
 }
