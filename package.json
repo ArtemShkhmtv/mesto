@@ -1,0 +1,30 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "Проектная работа, созданная для обучения основам __Java Script__ и закрепления изученных __навыков__ в области __HTML__ и __СSS__.\r Применяются технологии:\r  * работа с DOM-элементами браузера, получение и изменение их свойств;\r  * добавление элементов страницы через диалоговое окно;\r  * реакции на действия пользователя на странице проекта;\r  * валидация форм;\r  * реализация классов, экзеппляров классов;\r  * позиционирование элементов;\r  * флекс-бокс / grid верстка;\r  * основы и файловая система БЭМ;\r  * GIT / git-hub / git-pages;\r  * резиновая / адаптивная / отзывчивая верстка.",
+  "main": "./SRC/pages/index.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "cssnano": "^6.0.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss-loader": "^7.2.4",
+    "webpack": "^5.79.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.3"
+  },
+  "dependencies": {
+    "core-js": "^3.30.1"
+  }
+}

@@ -4,20 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./SRC/pages/index.css" />
     <title>Mesto-Russia</title>
   </head>
   <body class="page">
     <header class="header">
       <img
-        src="./SRC/images/Mesto-logo.svg"
+        src="<%=require('./images/Mesto-logo.svg')%>"
         alt="Место Россия логотип"
         class="logo"
       />
     </header>
     <main class="profile">
       <img
-        src="./SRC/images/Profile-photo.jpg"
+        src="<%=require('./images/Profile-photo.jpg')%>"
         alt="Фото профиля"
         class="profile__photo"
       />
@@ -162,15 +161,5 @@
         <botton class="card__delete" type="button" aria-label="урна"></botton>
       </article>
     </template>
-    <script type= "module" src="./SRC/components/const.js"></script>
-    <script type= "module" src="./SRC/components/cards.js"></script>
-    <script type= "module" src="./SRC/components/Card.js"></script>
-    <script type= "module" src="./SRC/components/FormValidator.js"></script>
-    <script type= "module" src="./SRC/components/Section.js"></script>
-    <script type= "module" src="./SRC/components/Popup.js"></script>
-    <script type= "module" src="./SRC/components/PicturePopup.js"></script>
-    <script type= "module" src="./SRC/components/PopupWithForm.js"></script>
-    <script type= "module" src="./SRC/components/UserInfo.js"></script>
-    <script type= "module" src="./SRC/pages/index.js"></script>
   </body>
 </html>

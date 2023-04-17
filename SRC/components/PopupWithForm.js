@@ -29,14 +29,6 @@ class PopupWithForm extends Popup {
   close() {
     super.close();
     this._form.reset();
-    // console.log(this);
-    // this._popupSelector.removeEventListener('submit', this._test);
   }
-
-  // _test(evt) {
-  //     evt.preventDefault();
-  //     this._submitForm(this._getInputValues());
-  //     this.close();
-  // }
 }
 export {PopupWithForm};
