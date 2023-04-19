@@ -1,12 +1,12 @@
 import "./index.css";
-import { initialCards } from "../components/cards.js";
+import { initialCards } from "../utils/cards.js";
 import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
-import { enableValidationConfig } from "../components/const.js";
+import { enableValidationConfig } from "../utils/const.js";
 import { Section } from "../components/Section.js";
-import {PopupWithImage} from "../components/PicturePopup.js";
-import {PopupWithForm} from "../components/PopupWithForm.js";
-import {UserInfo} from "../components/UserInfo.js";
+import { PopupWithImage } from "../components/PicturePopup.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
 const popupEdit = document.querySelector(".popup-edit");
 const buttonEdit = document.querySelector(".profile__edit-botton");
 const nameInput = document.querySelector(".popup-edit__text_type_name");
@@ -22,7 +22,7 @@ buttonEdit.addEventListener("click", () => {
 
 // инпут профиля по умолчанию и отправка формы
 function handleFormSubmit(item) {
-  profileInfo.setUserInfo(item[0].name, item[0].link)
+  profileInfo.setUserInfo(item.name, item.link)
 }
 
 // работа с карточкой
@@ -49,9 +49,10 @@ function createCard(item) {
 }
 
 // добавление карточки через форму
+const cardList = document.querySelector(".cards-grid");
+
 function addCardFormSubmit(item) {
-  const newCard = new Section({items: item, renderer: createCard}, '.cards-grid');
-  newCard.renderItems();
+  cardList.prepend(createCard(item));
 }
 
 // создание экземпляра валидатора для редактирования профиля

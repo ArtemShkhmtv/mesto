@@ -5,16 +5,19 @@ class PopupWithForm extends Popup {
     super(popupSelector);
     this._submitForm = submitForm;
     this._form = this._popupSelector.querySelector('.popup__container');
+    this._inputList = this._popupSelector.querySelectorAll('.popup__text');
   }
 
   _getInputValues() {
-    this._inputList = this._popupSelector.querySelectorAll('.popup__text');
     this._formValues = {};
-    this._formValuesArray = [];
-    this._formValues.name = this._inputList[0].value;
-    this._formValues.link = this._inputList[1].value;
-    this._formValuesArray[0] = this._formValues;
-    return this._formValuesArray;
+    this._inputList.forEach((input) => {
+     if (input.name === "popup-add-card-name" || input.name === "popup-edit-name") {
+      this._formValues.name = input.value;
+     } else {
+      this._formValues.link = input.value;
+    }
+    })
+    return this._formValues;
   }
 
   setEventListeners() {
