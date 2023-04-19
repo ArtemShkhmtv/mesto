@@ -49,7 +49,6 @@ function createCard(item) {
 }
 
 // добавление карточки через форму
-const cardList = document.querySelector(".cards-grid");
 
 function addCardFormSubmit(item) {
   defaultCardList.addItem(createCard(item));
