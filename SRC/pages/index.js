@@ -52,7 +52,7 @@ function createCard(item) {
 const cardList = document.querySelector(".cards-grid");
 
 function addCardFormSubmit(item) {
-  cardList.prepend(createCard(item));
+  defaultCardList.addItem(createCard(item));
 }
 
 // создание экземпляра валидатора для редактирования профиля
