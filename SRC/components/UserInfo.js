@@ -1,7 +1,8 @@
 class UserInfo {
-  constructor(userNameSelector, userInfoSelector) {
+  constructor(userNameSelector, userInfoSelector, userPhotoSelector) {
     this._userName = document.querySelector(userNameSelector);
     this._userInfo = document.querySelector(userInfoSelector);
+    this._userPhoto = document.querySelector(userPhotoSelector);
   }
 
   getUserInfo() {
@@ -11,9 +12,10 @@ class UserInfo {
     return this._userInfoList;
   }
 
-  setUserInfo(newName, newInfo) {
+  setUserInfo(newName = this._userName, newInfo = this._userInfo, newPhoto = this._userPhoto.src) {
     this._userName.textContent = newName;
     this._userInfo.textContent = newInfo;
+    this._userPhoto.src = newPhoto;
   }
 }
 export {UserInfo};

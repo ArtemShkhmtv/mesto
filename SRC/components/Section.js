@@ -12,13 +12,18 @@ class Section {
       this.addItem(element);
     });
   }
-  // добавление карточки на страницу
+  // добавление карточек с сервера
   addItem(element) {
+    this._container.append(element);
+  }
+
+  // добавление карточки на страницу из попапа 
+  addItemFromForm(element) {
     this._container.prepend(element);
   }
 
 
-  // очистка полей вставляемого элемента, но это не точно???
+  // очистка полей вставляемого элемента
   clear() {
     this._container.innerHTML = '';
   }

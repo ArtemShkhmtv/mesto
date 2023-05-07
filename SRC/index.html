@@ -15,11 +15,15 @@
       />
     </header>
     <main class="profile">
-      <img
+      <div class="profile__image-overlay">
+        <img
         src="<%=require('./images/Profile-photo.jpg')%>"
         alt="Фото профиля"
         class="profile__photo"
-      />
+        />
+        <div class="profile__image-wrapper">
+        </div>
+      </div>
       <div>
         <div class="profile__wrapper">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -122,7 +126,7 @@
             class="popup__save-botton popup-add-card__save-botton"
             type="submit"
           >
-            Сохранить
+            Создать
           </button>
         </form>
       </div>
@@ -143,6 +147,64 @@
       </div>
     </div>
 
+    <div class="popup popup-confirmation">
+      <div class="popup__wrapper popup-confirmation__wrapper">
+        <button
+          type="button"
+          class="popup__close popup-confirmation__close"
+          aria-label="закрыть"
+        ></button>
+        <form
+          class="popup__container popup-confirmation__container"
+          name="popup-confirmation__container"
+          novalidate
+        >
+          <h2 class="popup__title popup-confirmation__title"> Вы уверены?</h2>
+          <button
+            class="popup__save-botton popup-confirmation__save-botton"
+            type="submit"
+          >
+          Да
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="popup popup-update-avatar">
+      <div class="popup__wrapper popup-update-avatar__wrapper">
+        <button
+          type="button"
+          class="popup__close popup-update-avatar__close"
+          aria-label="закрыть"
+        ></button>
+        <form
+          class="popup__container popup-update-avatar__container"
+          name="popup-update-avatar__container"
+          novalidate
+        >
+          <h2 class="popup__title popup-update-avatar__title">Обновить аватар</h2>
+          <input
+            type="url"
+            class="popup__text popup-update-avatar__text popup-update-avatar__text_type_description"
+            name="link"
+            placeholder="Введите ссылку"
+            required
+          />
+          <span
+            class="popup__error-message popup__error-message_type_hidden link-error"
+          ></span>
+          <button
+            class="popup__save-botton popup-update-avatar__save-botton"
+            type="submit"
+          >
+          Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+
+
     <template id="card-template">
       <article class="card">
         <img
@@ -152,11 +214,15 @@
         />
         <div class="card__wrapper">
           <h2 class="card__title"></h2>
-          <button
-            type="button"
-            class="card__like"
-            aria-label="сердечко"
-          ></button>
+          <div class="card__like-wrapper">
+            <button
+              type="button"
+              class="card__like"
+              aria-label="сердечко"
+            ></button>
+            <p class="card__like-counter">0</p>
+          </div>
+          
         </div>
         <botton class="card__delete" type="button" aria-label="урна"></botton>
       </article>

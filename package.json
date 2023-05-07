@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Проектная работа, созданная для обучения основам __Java Script__ и закрепления изученных __навыков__ в области __HTML__ и __СSS__.\r Применяются технологии:\r  * работа с DOM-элементами браузера, получение и изменение их свойств;\r  * добавление элементов страницы через диалоговое окно;\r  * реакции на действия пользователя на странице проекта;\r  * валидация форм;\r  * реализация классов, экзеппляров классов;\r  * позиционирование элементов;\r  * флекс-бокс / grid верстка;\r  * основы и файловая система БЭМ;\r  * GIT / git-hub / git-pages;\r  * резиновая / адаптивная / отзывчивая верстка.",
   "main": "./SRC/pages/index.js",
+  "homepage": "https://artemshkhmtv.github.io/mesto/",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+    
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +21,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.3",
     "cssnano": "^6.0.0",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.5",
     "postcss-loader": "^7.2.4",
