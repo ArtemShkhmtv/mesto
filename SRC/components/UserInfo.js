@@ -12,10 +12,14 @@ class UserInfo {
     return this._userInfoList;
   }
 
-  setUserInfo(newName = this._userName, newInfo = this._userInfo, newPhoto = this._userPhoto.src) {
+  setUserInfo(
+    newName = this._userName,
+    newInfo = this._userInfo,
+    newPhoto = this._userPhoto.src
+  ) {
     this._userName.textContent = newName;
     this._userInfo.textContent = newInfo;
     this._userPhoto.src = newPhoto;
   }
 }
-export {UserInfo};
+export { UserInfo };

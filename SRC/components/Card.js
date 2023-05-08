@@ -1,17 +1,18 @@
 // создание класса карточки
 
 class Card {
-  constructor(data, template, onPhotoClick, onUrnClick, likeCard, unlikeCard) {
+  constructor(data, template, onPhotoClick, onUrnClick, likeCard, unlikeCard, userId) {
     this._name = data.name;
     this._link = data.link;
     this._likes = data.likes;
-    this._userId = data.owner._id;
+    this._ownerId = data.owner._id;
     this.cardId = data._id;
     this._template = template;
     this._onPhotoClick = onPhotoClick;
     this._onUrnClick = onUrnClick;
     this._like = likeCard;
     this._unlike = unlikeCard;
+    this._userId = userId;
   }
 
   // получить шаблон карточки
@@ -25,13 +26,13 @@ class Card {
 }
 
   // навешивесить стартовые лайки на карточки
-  _likeCard() {
+  _toggleCard() {
     if (this._likes.some((item) => {
-      return item._id === '9a61b2a7912ef1dfdd652884';
+      return item._id === this._userId;
     })) {
       this._likeButton.classList.add("card__like_favorite");
   } else {
-    this._likeButton.classList.remove("card__like_favorite");
+      this._likeButton.classList.remove("card__like_favorite");
   }
 
 
@@ -77,13 +78,13 @@ class Card {
     this._likeButton = this._element.querySelector(".card__like");
     this._cardImage = this._element.querySelector(".card__image");
     this._setEventListeners();
-    this._likeCard();
+    this._toggleCard();
     this._element.querySelector(".card__title").textContent = this._name;
     this._cardImage.alt = this._name;
     this._cardImage.src = this._link;
     this._likeCounter = this._element.querySelector('.card__like-counter');
     this._likeCounter.textContent = this._likes.length;
-    if (this._userId !== '9a61b2a7912ef1dfdd652884') {this._element.querySelector('.card__delete').remove()};
+    if (this._ownerId !== this._userId) {this._element.querySelector('.card__delete').remove()};
     return this._element;
   }
 }
