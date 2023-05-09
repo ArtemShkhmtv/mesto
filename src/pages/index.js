@@ -205,9 +205,7 @@ async function unlikeCard(card) {
 // загрузка с сервера и отрисовка данных пользователя
 async function getProfileInfo() {
   try {
-    const data = await api.getServerUserInfo();
-    profileInfo.setUserInfo(data.name, data.about, data.avatar);
-    userId = data._id;
+    return await api.getServerUserInfo();
   } catch (error) {
     console.error(error);
   }
@@ -218,21 +216,23 @@ let defaultCardList; //массив карточек
 // загрузка с сервера и отрисовка карточек
 async function getServerCards() {
   try {
-    const data = await api.getCards();
-    defaultCardList = new Section(
-      { items: data, renderer: createCard },
-      ".cards-grid"
-    );
-    defaultCardList.renderItems();
+    return await api.getCards();
   } catch (error) {
     console.error(error);
   }
 }
 
 Promise.all([getProfileInfo(), getServerCards()])
-  .then(() => {
-    getProfileInfo();
-    getServerCards();
+  .then(([userData, cards]) => {
+    // данные профиля
+    profileInfo.setUserInfo(userData.name, userData.about, userData.avatar);
+    userId = userData._id;
+    // создание карточек
+    defaultCardList = new Section(
+      { items: cards, renderer: createCard },
+      ".cards-grid"
+    );
+    defaultCardList.renderItems();
   })
   .catch((error) => {
     console.error(error);
